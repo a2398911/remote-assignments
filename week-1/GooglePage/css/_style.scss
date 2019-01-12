@@ -195,6 +195,9 @@ $color-background: #f7f7f7;
   @include max-1000(){
     margin-top: 16px;
   }
+  &:hover,&:active{
+    background-color: $color--btnBlue;
+  }
 }
 .mainContent-itemCard{
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,.3);

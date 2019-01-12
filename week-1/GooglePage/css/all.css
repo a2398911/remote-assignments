@@ -924,6 +924,10 @@ html {
   }
 }
 
+.mainContent-button a:hover, .mainContent-button a:active {
+  background-color: #e1f3fc;
+}
+
 .mainContent-itemCard {
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
