@@ -26,11 +26,15 @@ closedButton.addEventListener('click', ()=>{
 // --------------------------------------------------
 
 // Assignment 1: Function and Array
-function max(){
-  let numbersArray = [...arguments];
-  return numbersArray.reduce((previousValue,currentValue)=> {
-    return previousValue > currentValue ? previousValue : currentValue
-  });
+function max(...numbers){
+  
+  let firstValue = numbers[0]
+  for(let i=0;i<numbers.length;i++){
+    if(numbers[i] > firstValue){
+      firstValue = numbers[i]
+    }
+  }
+  return firstValue
 }
 console.log('1.Function and Array',max);
 
@@ -46,8 +50,16 @@ function calculate(args){
   }
   return result;
 }
+
 let Answer1 = {op:"+", n1:3, n2:4}
-let Answer2 = {op:"-", n1:8, n2:1}
+class CreateArg{
+  constructor(op, n1, n2) {
+    this.op = op;
+    this.n1 = n1;
+    this.n2 = n2;
+  }
+}
+let Answer2 = new CreateArg('-',8,6);
 console.log('2.Object Answer:', Answer1, Answer2);
 
 
