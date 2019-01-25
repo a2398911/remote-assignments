@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  form(action='/trackName', method='post')
+    input.input.inputName(type='text', name='userName', placeholder='Enter your name')
+    input.button.buttonName(type='submit', value='Send')
