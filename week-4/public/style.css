@@ -211,6 +211,7 @@ ul{
   border-radius: 8px;
   position: relative;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 @media (min-width: 600px) {
   #dataList{
@@ -219,7 +220,6 @@ ul{
   .card{
     width: 33.33333%;
     margin: 0 5px;
-    overflow: hidden;
   }
 }
 .card-img-wrap{

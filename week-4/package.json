@@ -2,7 +2,7 @@
   "name": "week-4",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://a2398911.github.io/remote-assignments",
+  "homepage": "https://a2398911.github.io/remote-assignments",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -25,5 +25,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
