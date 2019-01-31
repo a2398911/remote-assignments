@@ -31,20 +31,35 @@ function render(data){
   data[2].url = 'https://boygeniusreport.files.wordpress.com/2017/09/google-pixelbook1.jpg?quality=98&strip=all&w=782'
 
   const dataList = document.querySelector('#dataList');
-  let dataStr = '';
   data.forEach(item => {
-    dataStr += `
-    <li class="card">
-      <div class="card-img-wrap"><img class="card-img" src="${item.url}" alt=""></div>
-      <div class="card-body">
-        <h5 class="card-title">${item.name}</h5>
-        <h5 class="card-price">$ ${item.price}</h5>
-        <p class="card-text">${item.description}</p>
-      </div>
-    </li>
-    `
+    const li = document.createElement("li");
+    const cardImgWrap = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardBody = document.createElement("div");
+    const cardTitle = document.createElement("h5");
+    const cardPrice = document.createElement("h5");
+    const cardText = document.createElement("p");
+
+    li.className = "card";
+    cardImgWrap.className = "card-img-wrap";
+    cardImg.className = "card-img";
+    cardImg.src = item.url;
+    cardBody.className = "card-body";
+    cardTitle.className = "card-title";
+    cardTitle.textContent = item.name;
+    cardPrice.className = "card-price";
+    cardPrice.textContent = `$ ${item.price}`;
+    cardText.className = "card-text";
+    cardText.textContent = item.description;
+
+    li.appendChild(cardImgWrap).appendChild(cardImg);
+    li.appendChild(cardBody);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardPrice);
+    cardBody.appendChild(cardText);
+
+    dataList.appendChild(li);
   });
-  dataList.innerHTML = dataStr;
 }
 ajax("https://cwpeng.github.io/live-records-samples/data/products.json", function(response){
   render(response);
